@@ -1,0 +1,11 @@
+# Template Configuration with Nested Variables
+
+[variables]
+# Base variables provided by user
+first_name = { type = "string", description = "First name" }
+last_name = { type = "string", description = "Last name" }
+
+# Derived variables that reference base variables
+full_name = { type = "string", default = "{{first_name}} {{last_name}}" }
+greeting = { type = "string", default = "Hello, {{full_name}}!" }
+farewell = { type = "string", default = "Goodbye, {{full_name}}. Have a great day!" }
